@@ -249,14 +249,14 @@
     flex-wrap: wrap;
     padding-left: 10px;
     span {
-      background: #fff;
-      color: #999;
+      background: var(--tag-bg);
+      color: var(--tag-fg);
       padding: 2px 5px;
       border-radius: 5px;
       margin: 5px;
       &:hover {
-        background: rgb(0, 217, 255);
-        color: #fff;
+        background: var(--tag-hover-bg);
+        color: var(--tag-hover-fg);
       }
     }
   }

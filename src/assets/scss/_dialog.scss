@@ -7,7 +7,7 @@
   .title {
     padding-bottom: 20px;
     font-weight: bold;
-    border-bottom: 1px solid #67efff;
+    border-bottom: 1px solid var(--page-fg);
   }
   .banner {
     position: relative;
@@ -28,13 +28,13 @@
     font-size: 20px;
   }
   ul {
-    background: #67efff;
+    background: var(--page-fg);
     padding: 20px;
     li {
-      color: #000;
+      color: var(--page-bg);
       font-size: 15px;
       padding-left: 0px;
-      list-style: square;
+      list-style: none;
     }
   }
 }

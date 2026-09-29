@@ -29,6 +29,31 @@
     transition: all 0.5s ease;
     padding-bottom: 30px;
   }
+  h1.sketch-title {
+    line-height: 1;
+
+    svg {
+      display: block;
+      width: min(100%, 720px);
+      height: 1.15em;
+      margin-left: auto;
+      overflow: visible;
+    }
+
+    text {
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 58px;
+      fill: transparent;
+      stroke: var(--page-fg);
+      stroke-width: 1.8;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-dasharray: 1400;
+      stroke-dashoffset: 1400;
+      animation: sketch-write 3s ease forwards;
+    }
+  }
   h4 {
     padding-bottom: 20px;
   }
@@ -43,9 +68,35 @@
     h1 {
       font-size: 1.8rem;
     }
+    h1.sketch-title {
+      svg {
+        margin: 0 auto;
+      }
+      text {
+        font-size: 48px;
+      }
+    }
     h4 {
       font-size: 1.4rem;
     }
+  }
+}
+
+@keyframes sketch-write {
+  0% {
+    fill: transparent;
+    stroke-dashoffset: 1400;
+    stroke-width: 2;
+  }
+  68% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+    stroke-width: 1.6;
+  }
+  100% {
+    fill: var(--page-fg);
+    stroke-dashoffset: 0;
+    stroke-width: 0.35;
   }
 }
 

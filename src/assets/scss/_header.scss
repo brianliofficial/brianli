@@ -9,30 +9,19 @@
   left: 0;
   right: 0;
   overflow: hidden;
-  background: linear-gradient(130deg, #ffe300, #ff5c00, #00a3ff, #db36a4);
-  background-size: 800% 800%;
-  transition: all 1s ease;
-  animation: bg-gradient 19s ease infinite;
+  background-color: var(--page-bg);
+  background-image: var(--paper-grain);
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  transition: width 0.6s ease, opacity 0.4s ease, min-height 0.6s ease;
   display: flex;
   justify-content: center;
-  align-items:center
-  //reset
+  align-items: center;
   ul,
   li {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  @keyframes bg-gradient {
-    0% {
-      background-position: 10% 0%;
-    }
-    50% {
-      background-position: 91% 100%;
-    }
-    100% {
-      background-position: 10% 0%;
-    }
   }
   &.open {
     width: 100%;
@@ -44,7 +33,7 @@
     opacity: 0;
   }
   #border-circle {
-    width: 80%;
+    width: min(72%, 640px);
     height: auto;
     position: absolute;
     margin: auto;
@@ -60,27 +49,39 @@
       position: absolute;
       content: "";
       display: block;
-      width: 100%;
+      width: 78%;
       height: 0;
-      padding-bottom: 90%;
-      border-radius: 50%;
+      padding-bottom: 78%;
       margin: auto;
       pointer-events: none;
       right: 0;
       left: 0;
       top: 0;
       bottom: 0;
-      transition: all 0.5s ease;
-      // background: rgba(#fff,.5);
-      border: 1px solid #fff;
-      animation: AnimationName 5s ease infinite;
+      border: 1px solid var(--page-fg);
+      opacity: 0.45;
+      transform-origin: center;
+      transition: transform 0.4s ease;
       @include rwd($md) {
-        // border:2px solid rgba(#fff,2);
         display: none;
       }
     }
+    &::before {
+      transform: rotate(-1.8deg) scale(1);
+    }
     &::after {
-      animation-delay: 2s;
+      width: 84%;
+      padding-bottom: 84%;
+      transform: rotate(2.2deg) scale(1);
+      opacity: 0.28;
+    }
+    &:hover::before,
+    &:has(a:hover)::before {
+      transform: rotate(-1.8deg) scale(1.5);
+    }
+    &:hover::after,
+    &:has(a:hover)::after {
+      transform: rotate(2.2deg) scale(1.5);
     }
 
     .menu-main-wrapper {
@@ -89,7 +90,7 @@
       z-index: 10;
       margin-top: -0.5em;
       text-align: left;
-      color: white;
+      color: var(--page-fg);
       list-style: none;
       @media only screen and (min-width: 769px) {
         text-align: center;
@@ -99,10 +100,9 @@
         position: absolute;
         content: "";
         display: block;
-        width: 100%;
+        width: 70%;
         height: 0;
-        padding-bottom: 95%;
-        border-radius: 50%;
+        padding-bottom: 70%;
         z-index: -1;
         pointer-events: none;
         margin: auto;
@@ -110,18 +110,29 @@
         left: 0;
         top: 0;
         bottom: 0;
-        transition: all 0.5s ease;
-        // background: rgba(#fff,.5);
-        border: 1px solid #fff;
-        animation: AnimationName 4s ease infinite;
-        // animation-delay:500s;
-        // animation-direction:reverse;
+        border: 1px solid var(--page-fg);
+        opacity: 0.22;
+        transform-origin: center;
+        transition: transform 0.4s ease;
         @include rwd($md) {
           display: none;
         }
       }
+      &::before {
+        transform: rotate(1.2deg) scale(1);
+      }
       &::after {
-        animation-delay: 2s;
+        width: 76%;
+        padding-bottom: 76%;
+        transform: rotate(-2.4deg) scale(1);
+      }
+      &:hover::before,
+      &:has(a:hover)::before {
+        transform: rotate(1.2deg) scale(1.5);
+      }
+      &:hover::after,
+      &:has(a:hover)::after {
+        transform: rotate(-2.4deg) scale(1.5);
       }
       .menu-sub-wrapper {
         transition: all 0.5s ease;
@@ -137,61 +148,37 @@
       }
       li a {
         display: block;
-        padding: 10px;
-        color: #fff;
+        padding: 12px 10px;
+        color: var(--page-fg);
         font-size: 18pt;
         font-weight: bold;
         letter-spacing: 4px;
-        transition: all 0.5s ease;
+        transition: color 0.35s ease, letter-spacing 0.35s ease;
         text-decoration: none;
         &:after {
           content: "";
           display: block;
           width: 0%;
           position: relative;
-          // margin:auto;
-          border-bottom: 1px solid #fff;
-          transition: all 0.5s ease;
+          border-bottom: 1px solid var(--page-fg);
+          transition: width 0.35s ease;
           bottom: -10px;
           @media only screen and (min-width: 769px) {
             margin: auto;
           }
         }
         &:hover {
-          color: #fff;
-          letter-spacing: 15px;
+          color: var(--page-fg);
+          letter-spacing: 10px;
           text-decoration: none;
           text-shadow: none;
-          transition: all 0.5s ease;
           .menu-sub-wrapper {
             height: 156px;
           }
           &:after {
-            width: 50%;
+            width: 42%;
           }
         }
-      }
-    }
-
-    @keyframes AnimationName {
-      0% {
-        border-radius: 50%;
-        padding-bottom: 90%;
-      }
-      // 10%{
-      //   border-radius:48% 45% 47% 50%;
-      // }
-      50% {
-        border-radius: 50% 46% 50% 46%;
-        padding-bottom: 80%;
-        width: 80%;
-      }
-      80% {
-        border-radius: 46% 46% 48% 46%;
-      }
-      100% {
-        border-radius: 50%;
-        padding-bottom: 90%;
       }
     }
   }

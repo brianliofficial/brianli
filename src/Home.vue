@@ -176,13 +176,17 @@ onMounted(() => {
     :class="{ fadeOut: bannerStatus || dialogStatus }"
   >
     <div id="index-banner-detail">
-      <h1>BRIAN LI DESIGN</h1>
+      <h1 class="sketch-title">
+        <svg viewBox="0 0 720 90" role="img" aria-label="BRIAN LI DESIGN">
+          <text x="100%" y="72%" text-anchor="end">BRIAN LI DESIGN</text>
+        </svg>
+      </h1>
       <h4>
         I am a
         <b class="change-title"></b>
         <b class="splite">|</b>
       </h4>
-      <h6>2013 - 2023</h6>
+      <h6>2013 - 2026</h6>
     </div>
   </div>
   <div class="profile animated fadeIn" :class="{ fadeOut: dialogStatus }">
