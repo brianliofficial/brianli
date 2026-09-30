@@ -3,14 +3,14 @@ import { createApp } from "vue";
 import "@/assets/scss/all.scss";
 import { createI18n } from "vue-i18n";
 import App from "./App.vue";
-import messages from "@intlify/vite-plugin-vue-i18n/messages";
+import en from "@/locales/en.json";
+import cn from "@/locales/cn.json";
 
-// console.log(EN, "EN");
 const i18n = createI18n({
   legacy: false,
   locale: "en",
   globalInjection: true,
-  messages,
+  messages: { en, cn },
 });
 
 // createApp(App).mount("#app");

@@ -16,7 +16,6 @@
     "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
     "@vitejs/plugin-vue": "^3.2.0",
     "pug": "^3.0.4",
     "sass": "^1.56.1",
