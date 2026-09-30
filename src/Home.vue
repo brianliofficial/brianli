@@ -4,7 +4,7 @@ import dataUrl from "@/profiledata/index.json";
 import { throttle, getImageUrl } from "./plugin/common.js";
 import { listHashForFilter } from "./plugin/route.js";
 import { LIST_SEO, DEFAULT_SEO, setPageMeta } from "./plugin/seo.js";
-import Dialog from "@/components/dialog.vue";
+import Dialog from "@/components/Dialog.vue";
 const bannerStatus = ref(false);
 const dialogStatus = ref(false);
 const props = defineProps({
